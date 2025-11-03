@@ -1,0 +1,226 @@
+@use './variables.scss' as v;
+
+.App {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__title {
+    color: #817d92;
+    font-size: 2.4rem;
+    line-height: 3.2;
+    text-align: center;
+  }
+
+  &__wrapper {
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  &__generatorContianer {
+    height: 63.2rem;
+    width: 100%;
+    max-width: 54rem;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.4rem;
+  }
+
+  &__passwordDisplay {
+    padding: 3.2rem 1.9rem;
+    width: 100%;
+    height: 8rem;
+    background-color: v.$color-container;
+    border: 0.1rem solid v.$color-border;
+    border-radius: 1rem 1rem 0 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__password {
+    font-size: 3.2rem;
+    color: #54535b;
+  }
+
+  &__copy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    img {
+      width: 2.2rem;
+      height: 2.2rem;
+    }
+  }
+
+  &__generator {
+    padding: 3.2rem 1.9rem;
+    height: 100%;
+    width: 100%;
+    background-color: v.$color-container;
+    border: 0.1rem solid v.$color-border;
+    border-radius: 0 0 1rem 1rem;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 3.2rem;
+  }
+
+  &__lengthInfo {
+    margin-bottom: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__lengthTitle {
+    color: #e6e5ea;
+    font-size: 1.8rem;
+  }
+
+  &__lengthValue {
+    color: v.$color-green;
+    font-size: 3.2rem;
+  }
+
+  &__lengthInput {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 0.8rem;
+    background-color: #18171f;
+    border-radius: 0.4rem;
+    outline: none;
+    cursor: pointer;
+  }
+
+  &__lengthInput::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    background-color: #e6e5ea;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+
+  &__lengthInput::-webkit-slider-thumb:hover {
+    transform: scale(1.05);
+  }
+
+  &__lengthInput::-moz-range-thumb {
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    background-color: #e6e5ea;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+
+  &__lengthInput::-moz-range-thumb:hover {
+    transform: scale(1.05);
+  }
+
+  &__lengthInput::-moz-range-track {
+    height: 0.8rem;
+    background-color: #18171f;
+    border-radius: 0.4rem;
+  }
+
+  &__options {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.6rem;
+  }
+
+  &__strength {
+    padding: 2.2rem 3.15rem;
+    background-color: #18171f;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__strengthText {
+    color: #817d92;
+    font-size: 1.8rem;
+  }
+
+  &__strengthContainer {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+  }
+
+  &__strengthValue {
+    color: #fff;
+    font-size: 2.2rem;
+  }
+
+  &__strengthScales {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+  }
+
+  &__strengthScale {
+    width: 0.9rem;
+    height: 2.5rem;
+    border: 0.1rem solid #fff;
+  }
+
+  &__button {
+    position: relative;
+    padding: 2.5rem;
+    width: 100%;
+    font-size: 1.8rem;
+    color: v.$color-green;
+    background-color: transparent;
+    border: 0.1rem solid v.$color-green;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+
+    &::after {
+      content: '⮕';
+      position: absolute;
+      right: 1.8rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.8rem;
+      color: v.$color-green;
+      transition: transform 0.3s ease, color 0.3s ease;
+      pointer-events: none;
+    }
+
+    &:hover {
+      background-color: v.$color-green;
+      color: #24232c;
+      border-color: v.$color-green;
+    }
+
+    &:hover::after {
+      transform: translate(0.6rem, -50%);
+      color: #24232c;
+    }
+
+    &:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(164, 255, 175, 0.15);
+    }
+  }
+}

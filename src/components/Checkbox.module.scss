@@ -1,0 +1,66 @@
+@use '../styles/variables.scss' as v;
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  row-gap: 2.4rem;
+  cursor: pointer;
+  position: relative;
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  &__label {
+    position: relative;
+    padding-left: 3rem;
+    color: #e6e5ea;
+    font-size: 1.8rem;
+    cursor: pointer;
+    user-select: none;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 60%;
+      transform: translateY(-60%);
+      width: 2rem;
+      height: 2rem;
+      border: 2px solid #a4ffaf;
+      border-radius: 0.3rem;
+      background-color: transparent;
+      transition: all 0.2s ease;
+      box-sizing: border-box;
+      overflow: visible;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0.65rem;
+      top: 0.6rem;
+      width: 0.7rem;
+      height: 1.2rem;
+      border-left: 2px solid transparent;
+      border-bottom: 2px solid transparent;
+      transform: rotate(-45deg);
+      transform-origin: center;
+      transition: border-color 0.2s ease;
+      box-sizing: border-box;
+      pointer-events: none;
+      z-index: 2;
+    }
+  }
+
+  &__input:checked + &__label::before {
+    background-color: #a4ffaf;
+    border-color: #a4ffaf;
+  }
+
+  &__input:checked + &__label::after {
+    border-color: v.$color-container;
+  }
+}
