@@ -1,0 +1,9 @@
+@use './variables.scss' as v;
+
+@mixin hover-button {
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: v.$color-green;
+  }
+}
