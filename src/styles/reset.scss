@@ -75,3 +75,9 @@ select {
     scroll-behavior: auto !important;
   }
 }
+
+@media screen and (max-width: 540.1px) {
+  html {
+    font-size: 8px;
+  }
+}
